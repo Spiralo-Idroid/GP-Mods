@@ -27,9 +27,9 @@ print
 
 to startup {
 
-  for f (listFiles 'runtime/additional libraries/') {
-    lib = (readFile (joinStringArray (array 'runtime/additional libraries/' f))) //Read library file
-	loadModuleFromString (topLevelModule) lib	
+  for f (listFiles 'runtime/additional libraries/') { // List all the libraries in the specified folder
+    lib = (readFile (joinStringArray (array 'runtime/additional libraries/' f))) // Read library file from 'runtime/additional libraries/''
+	loadModuleFromString (topLevelModule) lib // Load module from file
   }
   
   setGlobal 'vectorTrails' false
